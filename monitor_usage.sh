@@ -1,5 +1,4 @@
 #!/bin/bash
-module load python/2.7.13_sci_01
 echo "username,projects,scratch,total" > hitlist.csv
 for user in $(ls -d /projects/*/); do
     username=$(basename ${user})
@@ -9,4 +8,3 @@ for user in $(ls -d /projects/*/); do
     echo ${username///},${proj_usage},${scth_usage},${totl_usage}
     echo ${username///},${proj_usage},${scth_usage},${totl_usage} >> hitlist.csv;
 done
-./plot_hitlist.py
